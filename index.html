@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Form</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    
+        .form-group {
+            margin-bottom: 10px;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" name="weight" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="healthReport">Upload Health Report:</label>
+                <input type="file" id="healthReport" name="healthReport" required>
+            </div>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+           
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var weight = document.getElementById("weight").value;
+            var email = document.getElementById("email").value;
+            var healthReport = document.getElementById("healthReport").value;
+            
+           
+            console.log("Name:", name);
+            console.log("Age:", age);
+            console.log("Weight:", weight);
+            console.log("Email:", email);
+            console.log("Health Report:", healthReport);
+            
+            
+            document.getElementById("myForm").reset();
+        });
+    </script>
+</body>
+</html>
